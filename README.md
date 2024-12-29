@@ -4,15 +4,8 @@
 for the specific purpose of running ROS applications (right now, simulations) in containers. 
 This, in theory, will make development way easier.
 
-## Step 1
+## How to run
 
-I'm going to start from the `ros::jazzy-perception-noble⁠` image and extend it to do what I need it to do.
+Run the container 'properly' using a command that looks like:
 
-## Step 2
-
-I'm going to create a ros_ws folder and add packages via git repositories. 
-To this end, I added some repos as submodules here to fill ros_ws. 
-I'll use these with the COPY or MOUNT command in the Dockerfile.
-
-To run this properly, I'll need to install Gazebo Harmonic into the Docker image, and let the GUI connect to my local X server
-
+`docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix [-it] [image_id]`

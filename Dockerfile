@@ -20,6 +20,10 @@ RUN source /opt/ros/jazzy/setup.bash \
 
 WORKDIR /
 
-RUN source /ros2_ws/install/setup.bash
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh" ]
 
 ENV GZ_SIM_RESOURCE_PATH="$GZ_SIM_RESOURCE_PATH:/ros2_ws/src/"
+
+CMD ["ros2", "launch", "lunabot_2425", "gz_bringup.launch.py"]
