@@ -8,7 +8,19 @@ RUN apt-get install -y \
 ros-jazzy-ros-gz \
 ros-jazzy-ros2-control \
 ros-jazzy-ros2-controllers \
-ros-jazzy-gz-ros2-control
+ros-jazzy-gz-ros2-control \
+libqt5gui5 \
+libqt5widgets5 \
+libqt5core5a \
+libx11-xcb1 \
+libxcb-xinerama0 \
+libxcb-xfixes0 \
+libxcb-shape0 \
+libxcb-randr0 \
+libxcb-image0 \
+libxcb-keysyms1 \
+libxcb-xtest0 \
+mesa-utils
 
 RUN mkdir /ros2_ws
 WORKDIR /ros2_ws
